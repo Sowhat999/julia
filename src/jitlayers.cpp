@@ -606,6 +606,8 @@ CodeGenOpt::Level CodeGenOptLevelFor(int optlevel)
 #else
     if (optlevel <= 0)
         return CodeGenOpt::None;
+    if (optlevel <= 1)
+        return CodeGenOpt::Less;
     if (optlevel <= 2)
         return CodeGenOpt::Default;
     return CodeGenOpt::Aggressive;
